@@ -58,10 +58,10 @@ public class FlightsAvailabilityExposure {
 			//to avoid empty entries
 		}
 		
-		public static FlightExposure withGeneral(String op, String fn, String depFrom, String arrAt) {
+		public static FlightExposure withGeneral(String operator, String flightNum, String depFrom, String arrAt) {
 			FlightExposure flight = new FlightExposure();
-			flight.operator = op;
-			flight.flightNumber = fn;
+			flight.operator = operator;
+			flight.flightNumber = flightNum;
 			flight.departsFrom = depFrom;
 			flight.arrivesAt = arrAt;
 

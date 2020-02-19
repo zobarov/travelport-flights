@@ -1,10 +1,53 @@
 # Travelport Flights
 
+Technical Assessment project for Travelport (2020).
+The purposes of the project is to deploy a gateway service to call third-party API to provide airline flights 
+information and represents it to required format.
+Third-Party API replies in XML-format.
+Requred REST output should be converted to JSON. 
 
-###
-Your task
+## Build and Run
 
-Your task is to implement a web service that will connect to an airline service that provides availability results in XML format and convert the results into a different JSON model.
-You are being asked to implement the exercise and upload the code for review.
+Build with Gradle 6
 
-So, you will have to implement a server component that will receive HTTP requests and convert into a REST/XML request to a mock service (see details below) and then convert the results into a JSON response and return to the caller.
+To build application (you will need Internet access to Maven Central):
+
+> gradle build
+
+The gateway configured to be  simply run via Gradle hook for Spring Boot command prompt as.
+
+> gradle bootRun
+
+Runs on port 8080
+
+Running JUnit test:
+
+> gradle test
+
+
+## Testing
+
+Various approaches available:
+
+- Curl or WebBrowser manual testing HTTP requests like:
+
+````
+http://localhost:8080/flights/availability/LED/AMS?start=2014-01-02T10:48:00.000Z&end=2015-01-02T10:48:00.000Z&pax=1
+````
+
+
+## Used Libraries and frameworks
+
+- Java 11 
+- Spring Boot, REST, Test
+- Gradle
+- JUnit 5
+- Swagger
+
+## TODOs and known issues:
+- Money values. Base in use for all fares.
+- Dates as string, Formatting, etc.
+- FlightTime calculation
+- Test coverage for border, missing values
+- Test coverage for endpoint missing params
+- Error handling.

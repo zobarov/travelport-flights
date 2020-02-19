@@ -14,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.awg.j20.travelport.flights.cfg.FlightApiConfig;
-import com.awg.j20.travelport.flights.serv.deser.Avaliability;
+import com.awg.j20.travelport.flights.serv.deser.Availability;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
@@ -30,7 +30,7 @@ public class ApiCall {
 	@Autowired
 	private FlightApiConfig apiConfig;
 	
-	public Avaliability call(FlightSearchParams params) {
+	public Availability call(FlightSearchParams params) {
 		
 
 		Map<String, String> uriParam = new HashMap<>();
@@ -57,7 +57,7 @@ public class ApiCall {
 		
 		try {
 			XmlMapper xmlMapper = new XmlMapper();
-			Avaliability gatewayResponse = xmlMapper.readValue(xml, Avaliability.class);
+			Availability gatewayResponse = xmlMapper.readValue(xml, Availability.class);
 			return gatewayResponse;
 		} catch (JsonMappingException e) {
 			// TODO Auto-generated catch block

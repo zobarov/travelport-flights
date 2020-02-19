@@ -16,7 +16,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.client.MockRestServiceServer;
 
 import com.awg.j20.travelport.flights.cfg.FlightApiConfig;
-import com.awg.j20.travelport.flights.serv.deser.Avaliability;
+import com.awg.j20.travelport.flights.serv.deser.Availability;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @ExtendWith(SpringExtension.class)
@@ -49,7 +49,7 @@ public class ApiCallTest {
 		searchParams.dateEnd = "2015-01-02T10:48:00.000Z";
 		searchParams.pax = 1;
 
-		Avaliability actual = apiCallSrvUnderTest.call(searchParams);
+		Availability actual = apiCallSrvUnderTest.call(searchParams);
 		
 		assertThat(actual).isNotNull();
 		assertThat(actual.getFlight()).isNotEmpty();

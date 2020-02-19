@@ -7,10 +7,10 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
 @JacksonXmlRootElement
-public class Avaliability {
+public class Availability {
 	@JacksonXmlElementWrapper(useWrapping = false)
 	@JsonProperty("Flight")
-	private List<Flight> flight;
+	public List<Flight> flight;
 
 	public List<Flight> getFlight() {
 		return flight;
