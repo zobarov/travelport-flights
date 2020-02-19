@@ -31,8 +31,8 @@ dependencies {
 	compile("org.springframework.boot:spring-boot-starter:${springBootVersion}")
 	compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
 	compile("org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}")
- 
-    
+	compile("com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.10.1")
+
     compileOnly('org.projectlombok:lombok')
 	annotationProcessor('org.projectlombok:lombok')
 	testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")

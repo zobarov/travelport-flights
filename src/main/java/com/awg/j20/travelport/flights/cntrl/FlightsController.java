@@ -20,7 +20,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.awg.j20.travelport.flights.cntrl.exp.FlightsAvailabilityExposure;
 import com.awg.j20.travelport.flights.cntrl.exp.FlightsAvailabilityExposure.FlightExposure;
 import com.awg.j20.travelport.flights.serv.ApiCall;
+import com.awg.j20.travelport.flights.serv.DeserToExposureConverter;
 import com.awg.j20.travelport.flights.serv.FlightSearchParams;
+import com.awg.j20.travelport.flights.serv.deser.Avaliability;
 
 @RestController
 @RequestMapping("/flights")
@@ -53,7 +55,8 @@ public class FlightsController {
 		params.dateEnd = dateEnd;
 		params.pax = pax;
 		
-		apiCall.call(params);
+		Avaliability xmlResponse = apiCall.call(params);
+		DeserToExposureConverter.convert(xmlResponse);
 		
 		FlightsAvailabilityExposure expos = new FlightsAvailabilityExposure();
 		

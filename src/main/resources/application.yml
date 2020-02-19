@@ -1,0 +1,8 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: travelport-flights
+#Remote flight API:
+flight-api:
+  url: 'https://private-anon-9065052855-mockairline.apiary-mock.com/flights'
