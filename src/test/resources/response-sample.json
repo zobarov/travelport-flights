@@ -1,0 +1,129 @@
+{
+
+	"availability": [
+
+		{
+
+			"flight": {
+
+				"operator": "UA",
+
+				"flightNumber": "UA304",
+
+				"departsFrom": "MUC",
+
+				"arrivesAt": "IST",
+
+				"departsOn": {
+
+					"date": "01-01-2014",
+
+					"time": "08:52AM"
+
+				},
+
+				"arrivesOn": {
+
+					"date": "01-01-2014",
+
+					"time": "12:49PM"
+
+				},
+
+				"flightTime": "03:57",
+
+				"farePrices": {
+
+					"first": {
+
+						"ticket": {
+
+							"currency": "USD",
+
+							"amount": 472.00
+
+						},
+
+						"bookingFee": {
+
+							"currency": "USD",
+
+							"amount": 29.50
+
+						},
+
+						"tax": {
+
+							"currency": "USD",
+
+							"amount": 23.60
+
+						}
+
+					},
+
+					"business": {
+
+						"ticket": {
+
+							"currency": "USD",
+
+							"amount": 236.00
+
+						},
+
+						"bookingFee": {
+
+							"currency": "USD",
+
+							"amount": 29.50
+
+						},
+
+						"tax": {
+
+							"currency": "USD",
+
+							"amount": 23.60
+
+						}
+
+					},
+
+					"economy": {
+
+						"ticket": {
+
+							"currency": "USD",
+
+							"amount": 118.00
+
+						},
+
+						"bookingFee": {
+
+							"currency": "USD",
+
+							"amount": 29.50
+
+						},
+
+						"tax": {
+
+							"currency": "USD",
+
+							"amount": 23.60
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+	]
+
+}

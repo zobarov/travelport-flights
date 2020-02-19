@@ -1,0 +1,47 @@
+{
+	"info": {
+		"_postman_id": "0afd2d25-4278-4f48-ac5c-acdcbe681c6b",
+		"name": "TravelportFlights",
+		"description": "Basic requests for Travelport Assessment Service Endpoint",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "MainContractWithParams",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/flights/availability/LED/AMS?start=2014-01-02T10:48:00.000Z&end=2015-01-02T10:48:00.000Z&pax=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"flights",
+						"availability",
+						"LED",
+						"AMS"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "2014-01-02T10:48:00.000Z"
+						},
+						{
+							"key": "end",
+							"value": "2015-01-02T10:48:00.000Z"
+						},
+						{
+							"key": "pax",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
