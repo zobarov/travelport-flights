@@ -9,6 +9,7 @@ import com.awg.j20.travelport.flights.cntrl.exp.FlightsAvailabilityExposure.Flig
 import com.awg.j20.travelport.flights.serv.deser.Availability;
 import com.awg.j20.travelport.flights.serv.deser.Fare;
 import com.awg.j20.travelport.flights.serv.deser.Flight;
+import com.awg.j20.travelport.flights.serv.deser.Money;
 
 
 @Service
@@ -26,20 +27,23 @@ public class DeserToExposureConverter {
 										.withDeparture(xmlFlight.departureDate, xmlFlight.departureDate)
 										.withFlightTime("CALC");
 			if(xmlFlight.getFares() != null) {
-				//TODO: encapsulate to enum:
+				
 				for(Fare fare : xmlFlight.getFares()) {
-					Money money = splitPrice(fare.basePrice);
-					if(money == null) {
+					Money moneyTicket = splitPrice(fare.basePrice);
+					Money moneyBookingFee = splitPrice(fare.fees);
+					Money moneyTax = splitPrice(fare.tax);
+					if(moneyTicket == null) {
 						logger.warn("Cannot convert to money:" + fare.basePrice);
 						continue;
 					}
 					
+					//TODO: encapsulate to enum:
 					if("FIF".equalsIgnoreCase(fare.clazz)) {
-						expFlight.withFarePriceFirst(money.sum, money.currency);
+						expFlight.withFarePriceFirst(moneyTicket, moneyBookingFee, moneyTax);
 					} else if("YIF".equalsIgnoreCase(fare.clazz)) {
-						expFlight.withFarePriceEconomy(money.sum, money.currency);
+						expFlight.withFarePriceEconomy(moneyTicket, moneyBookingFee, moneyTax);
 					} else if("CIF".equalsIgnoreCase(fare.clazz)) {
-						expFlight.withFarePriceBusiness(money.sum, money.currency);
+						expFlight.withFarePriceBusiness(moneyTicket, moneyBookingFee, moneyTax);
 					}
 				}
 			}						
@@ -58,15 +62,4 @@ public class DeserToExposureConverter {
 		}
 		return new Money(splits[1], splits[0]);
 	}
-	
-	private static class Money {
-		private String currency;
-		private String sum;
-		
-		public Money(String sum, String curr) {
-			this.sum = sum;
-			this.currency = curr;
-		}
-	}
-
 }

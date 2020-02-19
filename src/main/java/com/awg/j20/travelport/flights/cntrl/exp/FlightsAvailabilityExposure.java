@@ -3,6 +3,7 @@ package com.awg.j20.travelport.flights.cntrl.exp;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.awg.j20.travelport.flights.serv.deser.Money;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
@@ -93,32 +94,31 @@ public class FlightsAvailabilityExposure {
 		}
 		
 		//TODO: strict to money:
-		public FlightExposure withFarePriceFirst(String amount, String curr) {
-			
+		public FlightExposure withFarePriceFirst(Money ticket, Money bookengFee, Money tax) {	
 			FareExposure fareFirst = new FareExposure();
-			fareFirst.ticket = new FareEntryExposure(amount, curr);
-			fareFirst.bookingFee = new FareEntryExposure(amount, curr);
-			fareFirst.tax = new FareEntryExposure(amount, curr);
+			fareFirst.ticket = new FareEntryExposure(ticket.sum(), ticket.currency());
+			fareFirst.bookingFee = new FareEntryExposure(bookengFee.sum(), bookengFee.currency());
+			fareFirst.tax = new FareEntryExposure(tax.sum(), tax.currency());
 			this.farePrices.first = fareFirst;
 			return this;
 		}
 		
-		public FlightExposure withFarePriceBusiness(String amount, String curr) {
+		public FlightExposure withFarePriceBusiness(Money ticket, Money bookengFee, Money tax) {
 			
 			FareExposure fareBusiness = new FareExposure();
-			fareBusiness.ticket = new FareEntryExposure(amount, curr);
-			fareBusiness.bookingFee = new FareEntryExposure(amount, curr);
-			fareBusiness.tax = new FareEntryExposure(amount, curr);
+			fareBusiness.ticket = new FareEntryExposure(ticket.sum(), ticket.currency());
+			fareBusiness.bookingFee = new FareEntryExposure(bookengFee.sum(), bookengFee.currency());
+			fareBusiness.tax = new FareEntryExposure(tax.sum(), tax.currency());
 			this.farePrices.business = fareBusiness;
 			return this;
 		}
 		
-		public FlightExposure withFarePriceEconomy(String amount, String curr) {
+		public FlightExposure withFarePriceEconomy(Money ticket, Money bookengFee, Money tax) {
 			
 			FareExposure fareEconomy = new FareExposure();
-			fareEconomy.ticket = new FareEntryExposure(amount, curr);
-			fareEconomy.bookingFee = new FareEntryExposure(amount, curr);
-			fareEconomy.tax = new FareEntryExposure(amount, curr);
+			fareEconomy.ticket = new FareEntryExposure(ticket.sum(), ticket.currency());
+			fareEconomy.bookingFee = new FareEntryExposure(bookengFee.sum(), bookengFee.currency());
+			fareEconomy.tax = new FareEntryExposure(tax.sum(), tax.currency());
 			this.farePrices.economy = fareEconomy;
 			return this;
 		}

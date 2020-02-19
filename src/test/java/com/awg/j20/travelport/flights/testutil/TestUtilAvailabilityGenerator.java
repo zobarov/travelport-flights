@@ -21,8 +21,8 @@ public class TestUtilAvailabilityGenerator {
 		Fare fareBiz = new Fare();
 		fareBiz.clazz = "CIF";
 		fareBiz.basePrice = "EUR 200";
-		fareBiz.tax = "USD 70";
-		fareBiz.fees = "USD 20";
+		fareBiz.tax = "USD 170";
+		fareBiz.fees = "USD 120";
 		
 		flight1.fares.add(fareBiz);
 		

@@ -35,6 +35,9 @@ Various approaches available:
 http://localhost:8080/flights/availability/LED/AMS?start=2014-01-02T10:48:00.000Z&end=2015-01-02T10:48:00.000Z&pax=1
 ````
 
+- Postman
+You can find Postman collections for testing in src/main/resources
+
 
 ## Used Libraries and frameworks
 

@@ -100,21 +100,21 @@ public class FlightsControllerTest {
         .andExpect(jsonPath("$.availability[0].flight.farePrices.first.ticket.amount").value("100"))
         	.andExpect(jsonPath("$.availability[0].flight.farePrices.first.bookingFee").exists())
         .andExpect(jsonPath("$.availability[0].flight.farePrices.first.bookingFee.currency").value("USD"))
-        .andExpect(jsonPath("$.availability[0].flight.farePrices.first.bookingFee.amount").value("100"))
+        .andExpect(jsonPath("$.availability[0].flight.farePrices.first.bookingFee.amount").value("20"))
         	.andExpect(jsonPath("$.availability[0].flight.farePrices.first.tax").exists())
         .andExpect(jsonPath("$.availability[0].flight.farePrices.first.tax.currency").value("USD"))
-        .andExpect(jsonPath("$.availability[0].flight.farePrices.first.tax.amount").value("100"))
+        .andExpect(jsonPath("$.availability[0].flight.farePrices.first.tax.amount").value("70"))
         //biz
         .andExpect(jsonPath("$.availability[0].flight.farePrices.business").exists())
         	.andExpect(jsonPath("$.availability[0].flight.farePrices.business.ticket").exists())
         .andExpect(jsonPath("$.availability[0].flight.farePrices.business.ticket.currency").value("EUR"))
         .andExpect(jsonPath("$.availability[0].flight.farePrices.business.ticket.amount").value("200"))
         	.andExpect(jsonPath("$.availability[0].flight.farePrices.business.bookingFee").exists())
-        .andExpect(jsonPath("$.availability[0].flight.farePrices.business.bookingFee.currency").value("EUR"))
-        .andExpect(jsonPath("$.availability[0].flight.farePrices.business.bookingFee.amount").value("200"))
+        .andExpect(jsonPath("$.availability[0].flight.farePrices.business.bookingFee.currency").value("USD"))
+        .andExpect(jsonPath("$.availability[0].flight.farePrices.business.bookingFee.amount").value("120"))
         	.andExpect(jsonPath("$.availability[0].flight.farePrices.business.tax").exists())
-        .andExpect(jsonPath("$.availability[0].flight.farePrices.business.tax.currency").value("EUR"))
-        .andExpect(jsonPath("$.availability[0].flight.farePrices.business.tax.amount").value("200"))
+        .andExpect(jsonPath("$.availability[0].flight.farePrices.business.tax.currency").value("USD"))
+        .andExpect(jsonPath("$.availability[0].flight.farePrices.business.tax.amount").value("170"))
         //economy
         .andExpect(jsonPath("$.availability[0].flight.farePrices.economy").exists())
         	.andExpect(jsonPath("$.availability[0].flight.farePrices.economy.ticket").exists())
@@ -122,10 +122,10 @@ public class FlightsControllerTest {
         .andExpect(jsonPath("$.availability[0].flight.farePrices.economy.ticket.amount").value("50"))
         	.andExpect(jsonPath("$.availability[0].flight.farePrices.economy.bookingFee").exists())
         .andExpect(jsonPath("$.availability[0].flight.farePrices.economy.bookingFee.currency").value("CKZ"))
-        .andExpect(jsonPath("$.availability[0].flight.farePrices.economy.bookingFee.amount").value("50"))
+        .andExpect(jsonPath("$.availability[0].flight.farePrices.economy.bookingFee.amount").value("20"))
         	.andExpect(jsonPath("$.availability[0].flight.farePrices.economy.tax").exists())
         .andExpect(jsonPath("$.availability[0].flight.farePrices.economy.tax.currency").value("CKZ"))
-        .andExpect(jsonPath("$.availability[0].flight.farePrices.economy.tax.amount").value("50"));       
+        .andExpect(jsonPath("$.availability[0].flight.farePrices.economy.tax.amount").value("70"));       
     }
 	
 	@TestConfiguration
